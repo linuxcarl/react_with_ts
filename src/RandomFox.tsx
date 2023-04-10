@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 
 type Props = { image: string };
 export const RandomFox = ({ image }: Props): JSX.Element => {
-  return <img width={320} height="auto" className="rounded" src={image} />;
+  const refNode = useRef<HTMLImageElement>(null);
+  return (
+    <img
+      ref={refNode}
+      width={320}
+      height="auto"
+      className="rounded"
+      src={image}
+    />
+  );
 };
